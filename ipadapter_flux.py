@@ -133,7 +133,6 @@ class IPAdapterFluxLoader:
         logging.info("Loading InstantX IPAdapter Flux model.")
         clip_path = os.path.join(folder_paths.models_dir, "clip", "siglip-so400m-patch14-384")
         model = InstantXFluxIPAdapterModel(image_encoder_path=clip_path, ip_ckpt=ipadapter, device=provider, num_tokens=128)
-         
         return (model,)
 
 class ApplyIPAdapterFlux:
