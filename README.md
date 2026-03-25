@@ -1,4 +1,10 @@
-# ComfyUI-IPAdapter-Flux
+
+
+
+# ComfyUI-IPAdapter-Flux 
+
+# Stopped working due to changes in Flux DoublestreamBlock modulation params. Fixing is a Reverse Engineering project. 
+ 
 
 [阅读中文版](./README_zh.md)
 
