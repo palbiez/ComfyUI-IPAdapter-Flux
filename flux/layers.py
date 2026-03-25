@@ -16,10 +16,10 @@ class DoubleStreamBlockIPA(nn.Module):
         self.num_heads = original_block.num_heads
         self.hidden_size = original_block.hidden_size
         self.img_mod = getattr(original_block, "img_mod", None)
-          if self.img_mod is None:
-              raise AttributeError(
-                  "original_block has no img_mod; this ComfyUI FLUX block layout is incompatible with this IPAdapter patch"
-                  )
+        if self.img_mod is None:
+            raise AttributeError(
+                "original_block has no img_mod; this ComfyUI FLUX block layout is incompatible with this IPAdapter patch"
+                )
         self.img_norm1 = original_block.img_norm1
         self.img_attn = original_block.img_attn
 
