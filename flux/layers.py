@@ -16,6 +16,9 @@ class DoubleStreamBlockIPA(nn.Module):
         self.num_heads = original_block.num_heads
         self.hidden_size = original_block.hidden_size
         self.img_mod = original_block.img_mod
+        self.img_mod = getattr(original_block, "img_mod", None)
+        if self.img_mod is None:
+            self.img_mod = getattr(original_block, "img_mlp", None)
         self.img_norm1 = original_block.img_norm1
         self.img_attn = original_block.img_attn
 
@@ -28,7 +31,7 @@ class DoubleStreamBlockIPA(nn.Module):
 
         self.txt_norm2 = original_block.txt_norm2
         self.txt_mlp = original_block.txt_mlp
-        self.flipped_img_txt = original_block.flipped_img_txt
+        self.flipped_img_txt = getattr(original_block, 'flipped_img_txt', False)
 
         self.ip_adapter = ip_adapter
         self.image_emb = image_emb
