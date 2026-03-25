@@ -55,7 +55,7 @@ class InstantXFluxIPAdapterModel:
             except:
                 raise Exception(f"Failed to load clip image processor for {self.image_encoder_path}, please check the huggingface cache directory or clip_vision directory")
         # state_dict
-        state_dict = torch.load(os.path.join(MODELS_DIR,self.ip_ckpt), map_location="cpu", weights_only=True)
+        state_dict = torch.load(os.path.join(MODELS_DIR,self.ip_ckpt), map_location="cpu", weights_only=False)
         self.joint_attention_dim = 4096
         self.hidden_size = 3072
         # init projection model
